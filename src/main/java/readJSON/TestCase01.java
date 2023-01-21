@@ -18,17 +18,11 @@ public class TestCase01 {
 	{
 		int count =4;
 		List player = new ArrayList<>(ValidateJSON.getplayerCountry());
-		
 		int tempcount =0;
 		for(int i=0;i<player.size();i++)
-		{
-			if(player.get(i).toString().toLowerCase() != "india")
-			{
+			if(!player.get(i).toString().toLowerCase().equals("india") )
 				tempcount++;
-			}
-		}
-		
-		Assert.assertEquals( count, tempcount);
+		Assert.assertEquals( "verifyForeignPlayer",count, tempcount);
 		
 	}
 
