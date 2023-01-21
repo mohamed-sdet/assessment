@@ -14,7 +14,7 @@ public class TestCase01 {
 	//Validate Test that then team has only 4 foreign players
 
 	@Test
-	public void verifyForeignPlayer() throws IOException, ParseException
+	public void VerifyForeignPlayer() throws IOException, ParseException
 	{
 		int count =4;
 		List player = new ArrayList<>(ValidateJSON.getplayerCountry());
