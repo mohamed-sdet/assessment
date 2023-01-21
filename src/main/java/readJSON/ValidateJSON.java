@@ -11,6 +11,8 @@ import org.junit.Test;
 
 public class ValidateJSON {
 	
+	public static Object obj;
+	
 	@Test
 	public void ValidateTest01() throws IOException, ParseException
 	{
@@ -31,11 +33,27 @@ public class ValidateJSON {
 		{
 			JSONObject player = (JSONObject)players.get(i);
 			String playerNames = (String) player.get("name");
-			System.out.println(playerNames);
+			String countryNames = (String) player.get("country");
+			String roles = (String) player.get("role");
+			
+		    System.out.println(playerNames +countryNames+roles);
 		}
+
+	}
+	
+	public static Object parseJSON(String fileName) throws IOException, ParseException
+	{
+		JSONParser jsonParser = new JSONParser();
 		
+		FileReader reader = new FileReader(".\\testdata\\inputData\\"+fileName+".json");
+		
+		 obj = jsonParser.parse(reader);
+		
+		return obj;
 		
 	}
+	
+	
 
 	
 }
